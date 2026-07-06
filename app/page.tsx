@@ -1,16 +1,17 @@
 const CONTAINER = "max-w-[1200px] mx-auto w-full";
 
 const services = [
-  { icon: "sq",   title: "Generative AI",          desc: "Custom LLM products, copilots and agents — grounded in your data, tuned to your domain." },
-  { icon: "circ", title: "AI Pipelines",            desc: "End-to-end data and inference pipelines that are observable, versioned and built to scale." },
-  { icon: "dia",  title: "Machine Learning",        desc: "From problem framing to trained, evaluated and deployed models your team can own." },
-  { icon: "ring", title: "Recommendation Systems",  desc: "Personalization and ranking engines that measurably lift engagement and revenue." },
+  { icon: "sq",   title: "Automate Repetitive Work",    desc: "Free your team from manual, time-consuming tasks. AI handles the routine so your people focus on growth." },
+  { icon: "circ", title: "AI Customer Assistants",      desc: "Answer enquiries, qualify leads and support customers around the clock — without hiring more staff." },
+  { icon: "dia",  title: "Smarter Business Decisions",  desc: "Turn the data you already have into clear insights, forecasts and actions that move the needle." },
+  { icon: "ring", title: "Personalised Experiences",    desc: "Show every customer the right product, offer or message at the right moment to drive more sales." },
 ];
 
 const steps = [
-  { n: "1", title: "Map",    desc: "A short discovery sprint to find where AI creates real leverage in your business — and where it doesn't." },
-  { n: "2", title: "Build",  desc: "We prototype fast, validate against real data, then harden the winner into production infrastructure." },
-  { n: "3", title: "Evolve", desc: "Monitoring, evaluation and iteration loops so the system keeps improving after launch." },
+  { n: "1", title: "Free Consultation", desc: "We start with a conversation. Tell us about your business and we'll show you exactly where AI can save you time, cut costs, or bring in more revenue — no jargon, no pressure." },
+  { n: "2", title: "Map",               desc: "A focused session to identify your biggest opportunities and agree on what to build first for the fastest impact." },
+  { n: "3", title: "Build",             desc: "We build and test your AI solution against your real business data, then slot it into your existing workflow." },
+  { n: "4", title: "Grow",              desc: "Ongoing support and improvements so your AI keeps getting better — and your business keeps moving forward." },
 ];
 
 function LogoMark({ light = false }: { light?: boolean }) {
@@ -46,9 +47,9 @@ export default function Home() {
             </span>
           </a>
           <ul className="flex gap-9 list-none m-0 p-0">
-            {["Services", "Process", "Studio"].map((l) => (
+            {["What We Do", "How It Works", "Studio"].map((l) => (
               <li key={l}>
-                <a href={`#${l.toLowerCase()}`} className="text-[0.9375rem] text-[#1A1A1A] no-underline hover:text-[#4A9E8E] transition-colors">
+                <a href={`#${l.toLowerCase().replace(/\s+/g, "-")}`} className="text-[0.9375rem] text-[#1A1A1A] no-underline hover:text-[#4A9E8E] transition-colors">
                   {l}
                 </a>
               </li>
@@ -69,19 +70,19 @@ export default function Home() {
         />
         <div className={`${CONTAINER} relative z-10 py-24`}>
           <p className="text-[0.6875rem] font-semibold tracking-[0.13em] uppercase text-[#4A9E8E] mb-7">
-            AI Studio — Generative Systems &amp; ML Pipelines
+            AI for Growing Businesses
           </p>
           <h1 className="text-[clamp(3rem,5.5vw,5.25rem)] font-black leading-[1.04] tracking-[-0.035em] mb-6 max-w-2xl">
-            Intelligence,<br />engineered into<br />your product.
+            Grow more.<br />Work less.<br />With AI.
           </h1>
           <p className="text-base text-[#555] leading-[1.7] max-w-[460px] mb-10">
-            Evolwe designs and ships generative AI, machine-learning pipelines and recommendation systems for companies that want AI working in production — not in slide decks.
+            Evolwe helps everyday businesses automate the repetitive, serve customers better and make smarter decisions — without needing a tech team in-house.
           </p>
           <div className="flex gap-3">
             <a href="#contact" className="bg-[#4A9E8E] text-white text-[0.9375rem] font-medium px-6 py-3 rounded-full no-underline hover:bg-[#3d8a7b] transition-colors">
               Start a project
             </a>
-            <a href="#services" className="border border-[#1A1A1A] text-[#1A1A1A] text-[0.9375rem] font-medium px-6 py-3 rounded-full no-underline hover:bg-[#1A1A1A] hover:text-white transition-colors">
+            <a href="#what-we-do" className="border border-[#1A1A1A] text-[#1A1A1A] text-[0.9375rem] font-medium px-6 py-3 rounded-full no-underline hover:bg-[#1A1A1A] hover:text-white transition-colors">
               What we do
             </a>
           </div>
@@ -89,10 +90,10 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="border-t border-[#E2E5E2] px-6 py-20">
+      <section id="what-we-do" className="border-t border-[#E2E5E2] px-6 py-20">
         <div className={CONTAINER}>
           <p className="text-[0.6875rem] font-semibold tracking-[0.13em] uppercase text-[#4A9E8E] mb-8">
-            01 — Services
+            01 — What We Do
           </p>
           <div className="grid grid-cols-4 border border-[#E2E5E2]">
             {services.map((s, i) => (
@@ -109,12 +110,12 @@ export default function Home() {
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="border-t border-[#E2E5E2] px-6 py-20">
+      <section id="how-it-works" className="border-t border-[#E2E5E2] px-6 py-20">
         <div className={CONTAINER}>
           <p className="text-[0.6875rem] font-semibold tracking-[0.13em] uppercase text-[#4A9E8E] mb-10">
-            02 — How We Work
+            02 — How It Works
           </p>
-          <div className="grid grid-cols-3 gap-12">
+          <div className="grid grid-cols-4 gap-10">
             {steps.map((s) => (
               <div key={s.n}>
                 <div className="text-[5.5rem] font-black text-[#E2E5E2] leading-none mb-1">{s.n}</div>
@@ -133,7 +134,7 @@ export default function Home() {
             03 — Studio
           </p>
           <p className="text-[clamp(1.4rem,2.2vw,1.875rem)] font-bold leading-[1.4] tracking-[-0.02em]">
-            We&apos;re a small senior team of ML engineers and product designers. No hand-offs, no bloat — the people you meet are the people who build.
+            We work with business owners, not just developers. Our team speaks your language — we find where AI fits your business, build it properly, and stay with you as it grows.
           </p>
         </div>
       </section>
@@ -142,7 +143,7 @@ export default function Home() {
       <section id="contact" className="bg-[#0D1B19] px-6 pt-20 pb-14">
         <div className={CONTAINER}>
           <h2 className="text-white text-[clamp(2rem,3.5vw,3.25rem)] font-extrabold tracking-[-0.03em] leading-[1.1] max-w-[560px] mb-8">
-            Have a problem AI should be solving?
+            Ready to see how AI can grow your business?
           </h2>
           <a href="mailto:hello@evolwe.tech" className="inline-block bg-[#4A9E8E] text-white text-[0.9375rem] font-medium px-6 py-3 rounded-full no-underline hover:bg-[#3d8a7b] transition-colors">
             Contact us
